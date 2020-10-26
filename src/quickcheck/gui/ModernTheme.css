@@ -1,0 +1,73 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11.06.2018, 20:27:17
+    Author     : user
+*/
+
+.root {
+    -fx-base: hsb(310, 4%, 24%);
+
+}
+
+.comboBox:disabled,.comboBox:disabled>*{
+    -fx-opacity: .85;
+}
+
+
+.left_menu {
+    -fx-background-color: #ff9900;
+    -fx-background-radius: 0 45 0 0;
+}
+
+.left_menubutton {
+    -fx-background-color: #ff9900;
+    -fx-font-size: 1.0em;
+}
+
+.left_menubutton:hover {
+    -fx-text-fill: hsb(310, 4%, 24%);
+}
+
+.left_menubutton:pressed {
+    -fx-text-fill: hsb(310, 4%, 24%);
+}
+
+.left_menubutton:selected {
+    -fx-text-fill: hsb(310, 4%, 24%);
+}
+
+.center_menu {
+    -fx-background-color: transparent;
+    -fx-font-size: 1.5em;
+}
+
+.center_menu.button:hover{
+    -fx-background-color: white;
+    -fx-font-color: #dddddd;
+    -fx-background-radius: 0 0 0 0;
+}
+.menu_bar {
+	-fx-background-color:transparent;
+}
+.date-picker > .text-field {
+	-fx-background-color: #ff9900;
+	-fx-background-insets: 0 0 0 0, 0 0 0 0;
+}
+.date-picker > .arrow-button {
+	-fx-background-color: #ff9900;
+	-fx-background-insets: 0 0 0 0, 0 0 0 0;
+}
+
+.chart-series-line{
+	-fx-stroke-width: 1px;
+}
+
+.chart-line-symbol {
+	-fx-background-color: #f9d900, firebrick;
+    -fx-background-radius: 0px;
+}
+}

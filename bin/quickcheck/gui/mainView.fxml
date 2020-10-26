@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.jfree.chart.fx.ChartViewer?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@ModernTheme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quickcheck.gui.mainViewController">
+   <children>
+      <BorderPane fx:id="mainLayout" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <AnchorPane maxWidth="-Infinity" prefWidth="250.0" styleClass="left_menu" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox fillWidth="false" layoutX="30.0" layoutY="34.0" maxWidth="-Infinity" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="66.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label text="Gerät" />
+                        <ComboBox fx:id="machine" prefWidth="150.0" promptText="-- Bitte auswählen --" styleClass="left_menubutton" visibleRowCount="15" />
+                        <Label text="Strahlart" />
+                        <ComboBox fx:id="qualtiy" prefWidth="150.0" promptText="-- Bitte auswählen --" styleClass="left_menubutton" visibleRowCount="15" />
+                        <Label text="Energie" />
+                        <ComboBox fx:id="energy" prefWidth="150.0" promptText="-- Bitte auswählen --" styleClass="left_menubutton" visibleRowCount="15" />
+                        <Label text="Feldgröße" />
+                        <ComboBox fx:id="fieldSize" prefWidth="150.0" promptText="-- Bitte auswählen --" styleClass="left_menubutton" visibleRowCount="15" />
+                        <Label text="SSD" />
+                        <ComboBox fx:id="ssd" prefWidth="150.0" promptText="-- Bitte auswählen --" styleClass="left_menubutton" visibleRowCount="15" />
+                        <Label text="Keilwinkel" />
+                        <ComboBox fx:id="wedge" prefWidth="150.0" promptText="-- Bitte auswählen --" styleClass="left_menubutton" visibleRowCount="15" />
+                        <Label layoutX="10.0" layoutY="457.0" text="Datumbereich von" />
+                        <DatePicker fx:id="startDate" />
+                        <Label layoutX="10.0" layoutY="529.0" text="bis" />
+                        <DatePicker fx:id="stopDate" layoutX="10.0" layoutY="561.0" />
+                     </children>
+                     <padding>
+                        <Insets top="15.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </left>
+         <top>
+            <AnchorPane prefHeight="175.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="14.0" layoutY="79.0" text="Auswertung Quickcheck">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+         </top>
+         <center>
+            <ScrollPane fitToHeight="true" fitToWidth="true" pannable="true" BorderPane.alignment="TOP_CENTER">
+               <content>
+                  <VBox fx:id="charts" alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity">
+                     <children>
+                        <ChartViewer fx:id="caxSeries" disable="true" minHeight="200.0" styleClass="chart-series-line">
+                        </ChartViewer>
+                        <ChartViewer fx:id="symViewer" disable="true" layoutX="10.0" layoutY="10.0" minHeight="200.0" />
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </center>
+         <bottom>
+            <FlowPane BorderPane.alignment="CENTER_LEFT">
+               <children>
+                  <Label fx:id="pathLabel" text="Pfad: " />
+               </children>
+            </FlowPane>
+         </bottom>
+      </BorderPane>
+      <MenuBar fx:id="menuBar" styleClass="menu_bar" stylesheets="@ModernTheme.css">
+        <menus>
+          <Menu text="Datei">
+            <items>
+                  <MenuItem fx:id="openFile" mnemonicParsing="false" onAction="#openFileDialog" text="Öffene Datei" />
+              <MenuItem fx:id="exit" mnemonicParsing="false" text="Beenden">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
